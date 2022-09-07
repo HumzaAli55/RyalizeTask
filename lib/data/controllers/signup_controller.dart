@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:qureos_auth_project/data/singleton.dart';
-import 'package:qureos_auth_project/ui/Auth/login.dart';
+import 'package:ryalize_task/data/singleton.dart';
+import 'package:ryalize_task/ui/Auth/login.dart';
 
 import '../../ui/landing_page.dart';
 import '../../ui/widgets/progress_bar.dart';

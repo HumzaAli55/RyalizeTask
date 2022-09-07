@@ -2,8 +2,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:qureos_auth_project/data/data_bindings.dart';
-import 'package:qureos_auth_project/spalsh.dart';
+import 'package:ryalize_task/data/data_bindings.dart';
+import 'package:ryalize_task/spalsh.dart';
 
 void main()async {
   WidgetsFlutterBinding.ensureInitialized();

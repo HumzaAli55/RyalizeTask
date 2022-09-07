@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:get/get.dart';
-import 'package:qureos_auth_project/ui/Auth/login.dart';
+import 'package:ryalize_task/ui/Auth/login.dart';
 
 class SplashController extends GetxController{
   moveToHome(){

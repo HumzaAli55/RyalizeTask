@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:qureos_auth_project/data/models/auth_model.dart';
+import 'package:ryalize_task/data/models/auth_model.dart';
 
 class ApiClient extends GetConnect{
   final baseUrl = "http://restapi.adequateshop.com";

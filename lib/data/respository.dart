@@ -1,5 +1,5 @@
-import 'package:qureos_auth_project/data/api_client.dart';
-import 'package:qureos_auth_project/data/models/auth_model.dart';
+import 'package:ryalize_task/data/api_client.dart';
+import 'package:ryalize_task/data/models/auth_model.dart';
 
 class Repository{
   ApiClient _apiClient = ApiClient();

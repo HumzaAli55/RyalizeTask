@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:qureos_auth_project/data/controllers/splash_controller.dart';
+import 'package:ryalize_task/data/controllers/splash_controller.dart';
 
 import 'data/singleton.dart';
 

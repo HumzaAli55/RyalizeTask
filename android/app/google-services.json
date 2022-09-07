@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:793277800360:android:b3072e789561502f48c79d",
         "android_client_info": {
-          "package_name": "com.queros.casestudy.qureos_auth_project"
+          "package_name": "com.queros.casestudy.ryalize_task"
         }
       },
       "oauth_client": [
@@ -17,7 +17,7 @@
           "client_id": "793277800360-nq93lmauom2958qr24ob5gmtt8d003ba.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.queros.casestudy.qureos_auth_project",
+            "package_name": "com.queros.casestudy.ryalize_task",
             "certificate_hash": "f1ab27901e8f22ed43f667bf36ebc159b64a9cdc"
           }
         },

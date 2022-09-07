@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.queros.casestudy.qureos_auth_project">
+    package="com.queros.casestudy.ryalize_task">
    <application
-        android:label="qureos_auth_project"
+        android:label="ryalize_task"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

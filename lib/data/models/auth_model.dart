@@ -4,9 +4,6 @@
 
 import 'dart:convert';
 
-AuthModel signupModelFromJson(String str) => AuthModel.fromJson(json.decode(str));
-
-String signupModelToJson(AuthModel data) => json.encode(data.toJson());
 
 class AuthModel {
   AuthModel({
@@ -28,12 +25,6 @@ class AuthModel {
     data: Data.fromJson(json["data"]),
   );
 
-  Map<String, dynamic> toJson() => {
-    "\u0024id": id,
-    "code": code,
-    "message": message,
-    "data": data!.toJson(),
-  };
 }
 
 class Data {
@@ -58,12 +49,4 @@ class Data {
     email: json["Email"],
     token: json["Token"],
   );
-
-  Map<String, dynamic> toJson() => {
-    "\u0024id": id,
-    "Id": dataId,
-    "Name": name,
-    "Email": email,
-    "Token": token,
-  };
 }

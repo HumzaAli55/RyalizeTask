@@ -1,6 +1,6 @@
-import 'package:qureos_auth_project/asset_images/asset_images.dart';
-import 'package:qureos_auth_project/data/localCache.dart';
-import 'package:qureos_auth_project/data/respository.dart';
+import 'package:ryalize_task/asset_images/asset_images.dart';
+import 'package:ryalize_task/data/localCache.dart';
+import 'package:ryalize_task/data/respository.dart';
 
 class Singleton{
 

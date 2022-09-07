@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:qureos_auth_project/data/singleton.dart';
+import 'package:ryalize_task/data/singleton.dart';
 
 class LandingPage extends StatelessWidget {
   @override

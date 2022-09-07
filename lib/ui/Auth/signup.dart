@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:qureos_auth_project/data/controllers/signup_controller.dart';
+import 'package:ryalize_task/data/controllers/signup_controller.dart';
+import 'package:ryalize_task/ui/widgets/btn_widget.dart';
+import 'package:ryalize_task/ui/widgets/text_edit_field.dart';
 
 import '../../data/singleton.dart';
 import 'login.dart';
 
 class Signup extends StatelessWidget {
   SignupController controller = Get.find();
+  final GlobalKey<FormState>formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -15,198 +18,67 @@ class Signup extends StatelessWidget {
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(30.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Image(image: AssetImage(
-                    "${Singleton.singleton.assetImages.logo}"
-                )),
+            child: Form(
+              key: formKey,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Image(
+                      height: 170,
+                      image: AssetImage(
+                      "${Singleton.singleton.assetImages.logo}"
+                  )),
 
-                SizedBox(height: 20,),
+                  SizedBox(height: 30,),
 
-                TextFormField(
-                  controller: controller.emailController,
-                  style: TextStyle(
-                    fontSize: 24,
-                    color: Colors.blue,
-                    fontWeight: FontWeight.w600,
+                  TextEditField(controller: controller.emailController, hint: "Email", icon: Icon(
+                    Icons.email,
+                    color: Colors.grey,
                   ),
+                    obscureCheck: false, validatorFunc: (value) =>
+                      value.isEmpty ? 'Text Field cannot be blank' : null),
 
-                  decoration: InputDecoration(
-                    focusColor: Colors.white,
-                    //add prefix icon
-                    prefixIcon: Icon(
-                      Icons.email,
-                      color: Colors.grey,
-                    ),
 
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
 
-                    focusedBorder: OutlineInputBorder(
-                      borderSide:
-                      const BorderSide(color: Colors.blue, width: 1.0),
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    fillColor: Colors.grey,
+                  SizedBox(height: 20,),
 
-                    hintText: "Email",
-
-                    //make hint text
-                    hintStyle: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 16,
-                      fontFamily: "verdana_regular",
-                      fontWeight: FontWeight.w400,
-                    ),
-
-                    //create lable
-                    labelText: 'Email',
-                    //lable style
-                    labelStyle: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 16,
-                      fontFamily: "verdana_regular",
-                      fontWeight: FontWeight.w400,
-                    ),
+                  TextEditField(controller: controller.nameController, hint: "Name", icon: Icon(
+                    Icons.person,
+                    color: Colors.grey,
                   ),
-                ),
+                    obscureCheck: false, validatorFunc: (value) =>
+                      value.isEmpty ? 'Text Field cannot be blank' : null),
 
 
+                  SizedBox(height: 20,),
 
-                SizedBox(height: 20,),
-
-                TextFormField(
-                  controller: controller.nameController,
-                  style: TextStyle(
-                    fontSize: 24,
-                    color: Colors.blue,
-                    fontWeight: FontWeight.w600,
+                  TextEditField(controller: controller.passwordController, hint: "Password", icon: Icon(
+                    Icons.password,
+                    color: Colors.grey,
                   ),
+                    obscureCheck: true, validatorFunc: (value) =>
+                      value.isEmpty ? 'Text Field cannot be blank' : null),
 
-                  decoration: InputDecoration(
-                    focusColor: Colors.white,
-                    //add prefix icon
-                    prefixIcon: Icon(
-                      Icons.password,
-                      color: Colors.grey,
-                    ),
+                  SizedBox(height: 20,),
 
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
+                  ButtonWidget(onClick: (){
+                    if(formKey.currentState!.validate()) {
+                      controller.signup(controller.nameController.text,
+                          controller.emailController.text,
+                          controller.passwordController.text);
+      }
+                 }, text: "Register"),
 
-                    focusedBorder: OutlineInputBorder(
-                      borderSide:
-                      const BorderSide(color: Colors.blue, width: 1.0),
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    fillColor: Colors.grey,
+                  SizedBox(height: 20,),
 
-                    hintText: "name",
-
-                    //make hint text
-                    hintStyle: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 16,
-                      fontFamily: "verdana_regular",
-                      fontWeight: FontWeight.w400,
-                    ),
-
-                    //create lable
-                    labelText: 'name',
-                    //lable style
-                    labelStyle: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 16,
-                      fontFamily: "verdana_regular",
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                ),
+                  ButtonWidget(onClick:(){
+                    Get.to(Login());
+                  },text: "Click here to login"),
 
 
-                SizedBox(height: 20,),
 
-                TextFormField(
-                  controller: controller.passwordController,
-                  style: TextStyle(
-                    fontSize: 24,
-                    color: Colors.blue,
-                    fontWeight: FontWeight.w600,
-                  ),
-
-                  decoration: InputDecoration(
-                    focusColor: Colors.white,
-                    //add prefix icon
-                    prefixIcon: Icon(
-                      Icons.password,
-                      color: Colors.grey,
-                    ),
-
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-
-                    focusedBorder: OutlineInputBorder(
-                      borderSide:
-                      const BorderSide(color: Colors.blue, width: 1.0),
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    fillColor: Colors.grey,
-
-                    hintText: "Password",
-
-                    //make hint text
-                    hintStyle: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 16,
-                      fontFamily: "verdana_regular",
-                      fontWeight: FontWeight.w400,
-                    ),
-
-                    //create lable
-                    labelText: 'Password',
-                    //lable style
-                    labelStyle: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 16,
-                      fontFamily: "verdana_regular",
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                ),
-                SizedBox(height: 20,),
-
-                GestureDetector(
-                  onTap: (){
-                    controller.signup(controller.nameController.text,
-                        controller.emailController.text,
-                        controller.passwordController.text);
-                  },
-                  child: Container(
-                    height: 60,
-                    width: MediaQuery.of(context).size.width,
-                    decoration: BoxDecoration(
-                        color: Colors.blue,
-                        borderRadius: BorderRadius.circular(10)
-                    ),
-                    child: Center(child: Text("Signup",style: TextStyle(fontSize: 20,color: Colors.white,),)),
-                  ),
-                ),
-
-
-                SizedBox(height: 20,),
-
-                GestureDetector(
-                    onTap: (){
-                      Get.off(Login());
-                    },
-                    child: Text("Click here to Login!",style: TextStyle(fontSize: 20,color: Colors.blue,),))
-
-
-              ],
+                ],
+              ),
             ),
           ),
         ),
