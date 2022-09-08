@@ -4,6 +4,8 @@ import 'package:ryalize_task/data/respository.dart';
 
 class Singleton{
 
+  //Initializing all the classes which are we will need throughout the app
+
   AssetImages assetImages = AssetImages();
   Repository repository = Repository();
   LocalCache cache = LocalCache();

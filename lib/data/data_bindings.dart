@@ -7,6 +7,11 @@ import 'controllers/signup_controller.dart';
 class DataBindings implements Bindings{
   @override
   void dependencies() {
+
+    /*All the controllers are created here but not loaded in the memory yet. We are initializing Binding at
+    the start of the app*/
+
+
     Get.lazyPut(() => SplashController());
     Get.lazyPut(() => LoginController(),fenix: true);
     Get.lazyPut(() => SignupController(),fenix: true);
